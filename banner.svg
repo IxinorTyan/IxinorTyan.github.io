@@ -1,0 +1,245 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 900 320" width="100%" height="100%">
+  <defs>
+    <!-- Background Gradients -->
+    <radialGradient id="bgGlow" cx="50%" cy="50%" r="75%">
+      <stop offset="0%" stop-color="#16382c" stop-opacity="0.85" />
+      <stop offset="45%" stop-color="#0e231b" stop-opacity="0.95" />
+      <stop offset="85%" stop-color="#070c09" stop-opacity="1" />
+      <stop offset="100%" stop-color="#040605" stop-opacity="1" />
+    </radialGradient>
+
+    <radialGradient id="moonGlow" cx="50%" cy="50%" r="50%">
+      <stop offset="0%" stop-color="#98eecc" stop-opacity="0.75" />
+      <stop offset="40%" stop-color="#56ab7c" stop-opacity="0.3" />
+      <stop offset="80%" stop-color="#1f4037" stop-opacity="0.08" />
+      <stop offset="100%" stop-color="#000000" stop-opacity="0" />
+    </radialGradient>
+
+    <radialGradient id="fireGlow" cx="50%" cy="50%" r="50%">
+      <stop offset="0%" stop-color="#d4ffe7" stop-opacity="1" />
+      <stop offset="35%" stop-color="#84d898" stop-opacity="0.85" />
+      <stop offset="70%" stop-color="#2d5a43" stop-opacity="0.35" />
+      <stop offset="100%" stop-color="#16382c" stop-opacity="0" />
+    </radialGradient>
+
+    <!-- Linear Gradients for Frames & Badges -->
+    <linearGradient id="frameGrad" x1="0%" y1="0%" x2="100%" y2="100%">
+      <stop offset="0%" stop-color="#84d898" stop-opacity="0.7" />
+      <stop offset="50%" stop-color="#2d5a43" stop-opacity="0.3" />
+      <stop offset="100%" stop-color="#16382c" stop-opacity="0.8" />
+    </linearGradient>
+
+    <linearGradient id="aotanGrad" x1="0%" y1="0%" x2="0%" y2="100%">
+      <stop offset="0%" stop-color="#2a634d" />
+      <stop offset="50%" stop-color="#1b4234" />
+      <stop offset="100%" stop-color="#0e261d" />
+    </linearGradient>
+
+    <linearGradient id="textGrad" x1="0%" y1="0%" x2="100%" y2="0%">
+      <stop offset="0%" stop-color="#f0fbf5" />
+      <stop offset="50%" stop-color="#84d898" />
+      <stop offset="100%" stop-color="#a8f5d0" />
+    </linearGradient>
+
+    <!-- Filters for Ethereal Glow -->
+    <filter id="softGlow" x="-40%" y="-40%" width="180%" height="180%">
+      <feGaussianBlur in="SourceGraphic" stdDeviation="5" result="blur" />
+      <feMerge>
+        <feMergeNode in="blur" />
+        <feMergeNode in="SourceGraphic" />
+      </feMerge>
+    </filter>
+
+    <!-- Japanese Seigaiha Pattern (青海波 - 墨绿古韵波纹) -->
+    <pattern id="seigaiha" width="60" height="30" patternUnits="userSpaceOnUse">
+      <path d="M 0 30 A 30 30 0 0 1 60 30 M 10 30 A 20 20 0 0 1 50 30 M 20 30 A 10 10 0 0 1 40 30 M 30 0 A 30 30 0 0 1 90 0 M 40 0 A 20 20 0 0 1 80 0 M 50 0 A 10 10 0 0 1 70 0" 
+            fill="none" stroke="#1f4435" stroke-width="0.8" opacity="0.22" />
+    </pattern>
+  </defs>
+
+  <style>
+    @keyframes pulseOpacity {
+      0%, 100% { opacity: 0.6; }
+      50% { opacity: 1; }
+    }
+    .fire-pulse { animation: pulseOpacity 3s ease-in-out infinite; }
+    .title-text { font-family: 'Cinzel', 'Georgia', 'Songti SC', 'Source Han Serif', serif; letter-spacing: 6px; font-weight: 700; }
+    .tagline-text { font-family: 'Courier New', 'Consolas', monospace; letter-spacing: 3px; font-weight: 500; }
+  </style>
+
+  <!-- Background Base -->
+  <rect width="900" height="320" rx="14" fill="#060907" />
+  <rect width="900" height="320" rx="14" fill="url(#bgGlow)" />
+  <rect width="900" height="320" rx="14" fill="url(#seigaiha)" />
+
+  <!-- Outer Traditional Aesthetic Border -->
+  <rect x="14" y="14" width="872" height="292" rx="10" fill="none" stroke="url(#frameGrad)" stroke-width="1.2" opacity="0.6" />
+  <rect x="20" y="20" width="860" height="280" rx="8" fill="none" stroke="#2d5a43" stroke-width="0.7" stroke-dasharray="8,6" opacity="0.45" />
+
+  <!-- Corner Mystic Ornaments -->
+  <g stroke="#84d898" stroke-width="1.4" fill="none" opacity="0.75">
+    <!-- Top Left -->
+    <path d="M 28 42 L 42 28 M 28 28 L 50 28 M 28 28 L 28 50" />
+    <circle cx="46" cy="46" r="2" fill="#84d898" />
+    <!-- Top Right -->
+    <path d="M 872 42 L 858 28 M 872 28 L 850 28 M 872 28 L 872 50" />
+    <circle cx="854" cy="46" r="2" fill="#84d898" />
+    <!-- Bottom Left -->
+    <path d="M 28 278 L 42 292 M 28 292 L 50 292 M 28 292 L 28 270" />
+    <circle cx="46" cy="274" r="2" fill="#84d898" />
+    <!-- Bottom Right -->
+    <path d="M 872 278 L 858 292 M 872 292 L 850 292 M 872 292 L 872 270" />
+    <circle cx="854" cy="274" r="2" fill="#84d898" />
+  </g>
+
+  <!-- Central Ethereal Moon / Halo (芒上月 - 幽玄绿月) -->
+  <g transform="translate(450, 115)">
+    <circle cx="0" cy="0" r="110" fill="url(#moonGlow)" />
+    <!-- Inner Fine Moon Ring -->
+    <circle cx="0" cy="0" r="74" fill="none" stroke="#84d898" stroke-width="1" stroke-dasharray="140, 20" opacity="0.35" />
+    <circle cx="0" cy="0" r="78" fill="none" stroke="#56ab7c" stroke-width="0.6" stroke-dasharray="3, 7" opacity="0.45" />
+  </g>
+
+  <!-- ==================== LEFT FLANK: HANAFUDA CARDS (花札: 芒上月 & 青短) ==================== -->
+  <g id="left-flank" transform="translate(80, 85)">
+    <!-- Gentle up/down floating via native SVG animation -->
+    <animateTransform attributeName="transform" type="translate" values="80,85; 80,78; 80,85" dur="6s" repeatCount="indefinite" />
+
+    <!-- Hanafuda Card 1: Susuki grass under Moon (芒上月) -->
+    <g transform="rotate(-8)">
+      <rect x="0" y="0" width="75" height="118" rx="6" fill="#0a1510" stroke="#56ab7c" stroke-width="1.3" />
+      <rect x="4" y="4" width="67" height="110" rx="4" fill="#0d1f18" stroke="#1f4435" stroke-width="0.8" />
+      <!-- Dark hill curve -->
+      <path d="M 4 114 Q 38 72 71 114 Z" fill="#040806" />
+      <!-- Pale Jade Full Moon -->
+      <circle cx="38" cy="42" r="19" fill="#84d898" opacity="0.85" />
+      <circle cx="38" cy="42" r="19" fill="none" stroke="#dffff0" stroke-width="0.8" />
+      <!-- Grass blades -->
+      <path d="M 24 114 Q 28 82 33 76 M 38 114 Q 39 80 43 72 M 52 114 Q 48 85 45 78" stroke="#56ab7c" stroke-width="1.2" fill="none" />
+    </g>
+
+    <!-- Hanafuda Card 2: Aotan (青短 - 藻绿短册) -->
+    <g transform="translate(54, 25) rotate(9)">
+      <rect x="0" y="0" width="72" height="114" rx="6" fill="#0a1510" stroke="#84d898" stroke-width="1.3" />
+      <rect x="4" y="4" width="64" height="106" rx="4" fill="#091811" />
+      <!-- The Aotan ribbon strip -->
+      <rect x="20" y="12" width="24" height="80" rx="2" fill="url(#aotanGrad)" stroke="#84d898" stroke-width="0.9" />
+      <line x1="32" y1="14" x2="32" y2="90" stroke="#dffff0" stroke-width="0.6" stroke-dasharray="3, 3" opacity="0.7" />
+      <!-- Ribbon tassel -->
+      <path d="M 32 92 L 27 100 M 32 92 L 37 100" stroke="#56ab7c" stroke-width="1.2" />
+      <!-- Japanese Kana on ribbon -->
+      <text x="32" y="36" font-size="8" fill="#dffff0" text-anchor="middle" font-family="serif">あ</text>
+      <text x="32" y="49" font-size="8" fill="#dffff0" text-anchor="middle" font-family="serif">を</text>
+      <text x="32" y="62" font-size="8" fill="#dffff0" text-anchor="middle" font-family="serif">た</text>
+      <text x="32" y="75" font-size="8" fill="#dffff0" text-anchor="middle" font-family="serif">ん</text>
+    </g>
+
+    <!-- Floating Ghostfire (鬼火 Onibi) on Left -->
+    <g transform="translate(138, -12)" class="fire-pulse">
+      <circle cx="0" cy="0" r="22" fill="url(#fireGlow)" />
+      <path d="M 0 -16 C 6 -6, 12 4, 0 16 C -12 4, -6 -6, 0 -16 Z" fill="#98eecc" opacity="0.85" />
+      <circle cx="0" cy="3" r="5" fill="#ffffff" filter="url(#softGlow)" />
+    </g>
+  </g>
+
+  <!-- ==================== RIGHT FLANK: MAHJONG TILES (麻将: 发财 & 一索) ==================== -->
+  <g id="right-flank" transform="translate(685, 85)">
+    <!-- Gentle up/down floating via native SVG animation -->
+    <animateTransform attributeName="transform" type="translate" values="685,85; 685,92; 685,85" dur="7s" repeatCount="indefinite" />
+
+    <!-- Mahjong Tile 1: "发" (Green Dragon) -->
+    <g transform="rotate(-6)">
+      <rect x="0" y="0" width="66" height="92" rx="7" fill="#091711" stroke="#56ab7c" stroke-width="1.4" />
+      <rect x="4" y="4" width="58" height="84" rx="5" fill="#040a07" stroke="#16382c" stroke-width="0.8" />
+      <!-- Carved Emerald "發" -->
+      <text x="33" y="58" font-size="38" fill="#84d898" text-anchor="middle" font-weight="900" font-family="'KaiTi', 'SimSun', 'Noto Serif SC', serif" filter="url(#softGlow)">發</text>
+      <text x="33" y="58" font-size="38" fill="#ffffff" text-anchor="middle" font-weight="900" font-family="'KaiTi', 'SimSun', 'Noto Serif SC', serif" opacity="0.5">發</text>
+    </g>
+
+    <!-- Mahjong Tile 2: Bamboo/Bird motif ("一索") -->
+    <g transform="translate(54, 25) rotate(7)">
+      <rect x="0" y="0" width="66" height="92" rx="7" fill="#091711" stroke="#84d898" stroke-width="1.4" />
+      <rect x="4" y="4" width="58" height="84" rx="5" fill="#040a07" stroke="#16382c" stroke-width="0.8" />
+      <!-- Bird Body -->
+      <path d="M 33 22 C 38 27, 42 35, 37 46 C 33 56, 46 72, 33 76 C 20 72, 33 56, 29 46 C 24 35, 28 27, 33 22 Z" fill="#2d5a43" />
+      <circle cx="33" cy="28" r="3.2" fill="#84d898" />
+      <!-- Feathers -->
+      <path d="M 33 46 Q 24 57 16 68 M 33 46 Q 33 61 33 72 M 33 46 Q 42 57 50 68" stroke="#84d898" stroke-width="1.6" stroke-linecap="round" fill="none" />
+    </g>
+
+    <!-- Floating Ghostfire (鬼火 Onibi) on Right -->
+    <g transform="translate(-10, 95)" class="fire-pulse">
+      <circle cx="0" cy="0" r="26" fill="url(#fireGlow)" />
+      <path d="M 0 -18 C 7 -7, 14 5, 0 18 C -14 5, -7 -7, 0 -18 Z" fill="#84d898" opacity="0.9" />
+      <circle cx="0" cy="4" r="6" fill="#ffffff" filter="url(#softGlow)" />
+    </g>
+  </g>
+
+  <!-- ==================== CENTERPIECE: TORII & CLOUD WISPS ==================== -->
+  <g opacity="0.3" transform="translate(450, 48)">
+    <path d="M -120 48 Q 0 40 120 48 L 115 56 Q 0 50 -115 56 Z" fill="#56ab7c" />
+    <path d="M -100 68 L 100 68 L 98 74 L -98 74 Z" fill="#2d5a43" />
+    <line x1="-75" y1="56" x2="-75" y2="120" stroke="#1f4435" stroke-width="4" />
+    <line x1="75" y1="56" x2="75" y2="120" stroke="#1f4435" stroke-width="4" />
+  </g>
+
+  <!-- Traditional Clouds -->
+  <path d="M 280 185 C 310 165, 360 175, 380 195 C 390 175, 420 170, 440 185" fill="none" stroke="#2d5a43" stroke-width="1.2" opacity="0.3" stroke-linecap="round" />
+  <path d="M 620 185 C 590 165, 540 175, 520 195 C 510 175, 480 170, 460 185" fill="none" stroke="#2d5a43" stroke-width="1.2" opacity="0.3" stroke-linecap="round" />
+
+  <!-- ==================== CENTER TYPOGRAPHY ==================== -->
+  <!-- Top Badge: YŪGEN • 幽玄 -->
+  <g transform="translate(450, 80)">
+    <rect x="-70" y="-12" width="140" height="24" rx="12" fill="#091711" stroke="#2d5a43" stroke-width="0.9" />
+    <text x="0" y="4" fill="#84d898" font-size="11" text-anchor="middle" font-family="'Courier New', monospace" letter-spacing="2">❖ YŪGEN • 幽玄 ❖</text>
+  </g>
+
+  <!-- Main Name: IxinorTyan -->
+  <g transform="translate(450, 146)">
+    <text x="0" y="0" class="title-text" font-size="54" fill="#2d5a43" text-anchor="middle" opacity="0.8" filter="url(#softGlow)">IxinorTyan</text>
+    <text x="0" y="0" class="title-text" font-size="54" fill="url(#textGrad)" text-anchor="middle">IxinorTyan</text>
+  </g>
+
+  <!-- Divider Talisman Line -->
+  <g transform="translate(450, 180)" stroke="#56ab7c" stroke-width="1" opacity="0.75">
+    <line x1="-160" y1="0" x2="-35" y2="0" stroke="url(#frameGrad)" />
+    <g transform="rotate(45)">
+      <rect x="-4" y="-4" width="8" height="8" fill="#0e261d" stroke="#84d898" stroke-width="1" />
+    </g>
+    <circle cx="-20" cy="0" r="2" fill="#84d898" />
+    <circle cx="20" cy="0" r="2" fill="#84d898" />
+    <line x1="35" y1="0" x2="160" y2="0" stroke="url(#frameGrad)" />
+  </g>
+
+  <!-- Technical Identity Tagline (Replacing the old quote) -->
+  <g transform="translate(450, 218)">
+    <text x="0" y="0" class="tagline-text" font-size="14" fill="#dffff0" text-anchor="middle">
+      PYTHON DEVELOPER • AUTOMATION &amp; TOOLING
+    </text>
+  </g>
+
+  <!-- Bottom Capsule Badges -->
+  <g transform="translate(450, 268)">
+    <!-- Badge 1: Python -->
+    <g transform="translate(-140, 0)">
+      <rect x="-52" y="-12" width="104" height="24" rx="4" fill="#0b1712" stroke="#1f4435" stroke-width="0.9" />
+      <text x="0" y="4" font-size="11" fill="#84d898" text-anchor="middle" font-family="'Courier New', monospace">❖ PYTHON</text>
+    </g>
+    <!-- Badge 2: Automation -->
+    <g transform="translate(0, 0)">
+      <rect x="-60" y="-12" width="120" height="24" rx="4" fill="#0b1712" stroke="#2d5a43" stroke-width="0.9" />
+      <text x="0" y="4" font-size="11" fill="#98eecc" text-anchor="middle" font-family="'Courier New', monospace">✦ AUTOMATION</text>
+    </g>
+    <!-- Badge 3: Reverse Engineering -->
+    <g transform="translate(140, 0)">
+      <rect x="-52" y="-12" width="104" height="24" rx="4" fill="#0b1712" stroke="#1f4435" stroke-width="0.9" />
+      <text x="0" y="4" font-size="11" fill="#84d898" text-anchor="middle" font-family="'Courier New', monospace">❖ REVERSE</text>
+    </g>
+  </g>
+
+  <!-- Floating Embers -->
+  <circle cx="270" cy="80" r="1.5" fill="#84d898" opacity="0.6" class="fire-pulse" />
+  <circle cx="340" cy="245" r="1.8" fill="#dffff0" opacity="0.5" class="fire-pulse" />
+  <circle cx="580" cy="75" r="1.2" fill="#84d898" opacity="0.7" class="fire-pulse" />
+  <circle cx="630" cy="235" r="2" fill="#56ab7c" opacity="0.4" class="fire-pulse" />
+</svg>
